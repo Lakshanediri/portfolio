@@ -6,7 +6,7 @@ class HeroSection extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    return section([
+    return section( classes: 'hero-section', [ 
       h1([
         Component.text('Mobile application Engineer')
       ]),
@@ -25,7 +25,7 @@ class HeroSection extends StatelessComponent {
             [Component.text("Hire ME")]
           ),
           button(
-            classes: 'btn secondry',
+            classes: 'btn secondary',
             [Component.text("Download CV")]
           )
       ]),
