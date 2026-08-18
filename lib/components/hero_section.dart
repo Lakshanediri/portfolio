@@ -12,10 +12,10 @@ class HeroSection extends StatelessComponent {
       ]),
       p([
         Component.text('Hi, I am Mobile Application Engineer.  ')
-      ])
+      ]),
       p([
         Component.text('I am making mobile applications Using Flutter.')
-      ])
+      ]),
       p([
         Component.text('I am making mobile games Using Godot.')
       ]),
@@ -38,5 +38,5 @@ class HeroSection extends StatelessComponent {
     ]);
   }
 
-  
+
 }
