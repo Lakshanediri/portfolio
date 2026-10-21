@@ -7,7 +7,6 @@
 import 'package:jaspr/server.dart';
 import 'package:portfolio/components/header.dart' as _header;
 import 'package:portfolio/constants/theme.dart' as _theme;
-import 'package:portfolio/pages/about.dart' as _about;
 import 'package:portfolio/app.dart' as _app;
 
 /// Default [ServerOptions] for use with your Jaspr project.
@@ -28,11 +27,9 @@ import 'package:portfolio/app.dart' as _app;
 /// ```
 ServerOptions get defaultServerOptions => ServerOptions(
   clientId: 'main.client.dart.js',
-  clients: {_about.About: ClientTarget<_about.About>('about')},
   styles: () => [
     ..._theme.styles,
     ..._app.App.styles,
     ..._header.Header.styles,
-    ..._about.About.styles,
   ],
 );

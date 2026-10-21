@@ -1,0 +1,115 @@
+/* =============================================================
+   matrix.css — decorative "code rain" behind the dark band
+   -------------------------------------------------------------
+   Markup: .matrix > .matrix-col
+   Variants: --band (sticky, dark sections), --hero, --footer.
+   Columns are generated at build time, animated with pure CSS.
+   ============================================================= */
+
+.matrix {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.82;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+}
+
+/* Tall dark band: the layer is pinned to the viewport while the band scrolls. */
+.matrix--band {
+  position: sticky;
+  top: 0;
+  bottom: auto;
+  height: 100vh;
+  margin-bottom: -100vh;
+}
+
+.matrix-col {
+  --mx-rgb: 57, 255, 20;
+  --mx-head-rgb: 214, 255, 226;
+
+  position: absolute;
+  top: -720px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: "JetBrains Mono", "MS Gothic", "Yu Gothic", ui-monospace, monospace;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.34em;
+  white-space: nowrap;
+  color: transparent;
+  background-image: linear-gradient(
+    180deg,
+    rgba(var(--mx-rgb), 0) 0%,
+    rgba(var(--mx-rgb), 0.24) 24%,
+    rgba(var(--mx-rgb), 0.72) 66%,
+    rgba(var(--mx-head-rgb), 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation-name: matrix-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: top;
+}
+
+@keyframes matrix-fall {
+  from {
+    top: -720px;
+  }
+  to {
+    top: 100%;
+  }
+}
+
+/* ------------------------------ hero ------------------------------ */
+
+.matrix--hero {
+  /* slightly oversized so the pointer parallax never exposes an edge */
+  inset: -20px;
+  opacity: 0.55;
+  transform: translate3d(
+    calc(var(--hvx, 0px) * -1.1),
+    calc(var(--hvy, 0px) * -1.1),
+    0
+  );
+  will-change: transform;
+}
+
+.matrix--hero .matrix-col {
+  --mx-rgb: 9, 122, 66;
+  --mx-head-rgb: 4, 82, 44;
+}
+
+body:has(#theme-toggle:checked) .matrix--hero {
+  opacity: 0.78;
+}
+
+body:has(#theme-toggle:checked) .matrix--hero .matrix-col {
+  --mx-rgb: 57, 255, 20;
+  --mx-head-rgb: 214, 255, 226;
+}
+
+/* ----------------------------- footer ----------------------------- */
+
+.matrix--footer {
+  opacity: 0.42;
+}
+
+@media (max-width: 720px) {
+  .matrix--band {
+    opacity: 0.62;
+  }
+
+  .matrix-col:nth-child(even) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .matrix {
+    display: none;
+  }
+}

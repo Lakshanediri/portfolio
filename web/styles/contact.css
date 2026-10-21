@@ -1,0 +1,298 @@
+/* =============================================================
+   contact.css — section 04, contact panel + form card
+   ============================================================= */
+
+.contact {
+  padding-top: 92px;
+  padding-bottom: 84px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.contact-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 30px;
+  border: 1px solid var(--deep-line);
+  border-radius: 26px;
+  background:
+    radial-gradient(120% 90% at 0% 0%, rgba(53, 230, 196, 0.1), transparent 58%),
+    linear-gradient(168deg, #0d2334, #071522);
+  overflow: hidden;
+}
+
+.contact-panel h2 {
+  font-size: clamp(1.7rem, 2.7vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1.06;
+  max-width: 16ch;
+}
+
+.contact-panel h2 em {
+  font-style: normal;
+  background: linear-gradient(112deg, #35e6c4, #55b9f3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.contact-panel > p {
+  max-width: 40ch;
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: rgba(233, 242, 249, 0.62);
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: auto;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.contact-list a,
+.contact-list div {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-list .ic {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--mint-bright);
+  font-size: 0.8rem;
+  flex: none;
+}
+
+.contact-list .cl-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(233, 242, 249, 0.4);
+}
+
+.contact-list .cl-value {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(244, 250, 253, 0.88);
+}
+
+.contact-list a:hover .cl-value {
+  color: var(--mint-bright);
+}
+
+.contact-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.social {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.45rem 0.72rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgba(240, 248, 253, 0.8);
+  text-decoration: none;
+  transition: border-color 0.25s ease, color 0.25s ease, background-color 0.25s ease;
+}
+
+.social:hover {
+  border-color: rgba(53, 230, 196, 0.4);
+  color: var(--mint-bright);
+  background: rgba(53, 230, 196, 0.07);
+}
+
+.social .i {
+  font-size: 0.72rem;
+}
+
+/* ---------- form ---------- */
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 28px;
+  border: 1px solid var(--deep-line);
+  border-radius: 26px;
+  background: linear-gradient(172deg, #0e2436, #091724);
+}
+
+.contact-card .form-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.contact-card .form-head span:first-child {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(233, 242, 249, 0.48);
+}
+
+.contact-card .form-head .mono {
+  color: rgba(233, 242, 249, 0.34);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+.field span {
+  font-family: var(--font-mono);
+  font-size: 0.54rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(233, 242, 249, 0.46);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.78rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.035);
+  color: #f1f8fc;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  line-height: 1.5;
+  outline: none;
+  transition: border-color 0.22s ease, background-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.field textarea {
+  min-height: 104px;
+  resize: vertical;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgba(233, 242, 249, 0.28);
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: rgba(53, 230, 196, 0.52);
+  background: rgba(53, 230, 196, 0.05);
+  box-shadow: 0 0 0 4px rgba(53, 230, 196, 0.08);
+}
+
+.form-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.form-foot .note {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.54rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(233, 242, 249, 0.4);
+}
+
+.form-foot .note .i {
+  color: var(--mint);
+  font-size: 0.7rem;
+}
+
+.btn-send {
+  background: linear-gradient(112deg, #35e6c4, #2aa7dd);
+  color: #04241f;
+  box-shadow: 0 18px 34px -20px rgba(53, 230, 196, 0.9);
+}
+
+.btn-send:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 40px -20px rgba(53, 230, 196, 1);
+}
+
+/* small reassurance row under the form */
+
+.form-extra {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.form-extra div {
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.form-extra b {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--mint-bright);
+}
+
+.form-extra span {
+  display: block;
+  margin-top: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(233, 242, 249, 0.4);
+}

@@ -16,38 +16,42 @@ import 'main.server.options.dart';
 
 void main() {
   // Initializes the server environment with the generated default options.
-  Jaspr.initializeApp(
-    options: defaultServerOptions,
-  );
+  Jaspr.initializeApp(options: defaultServerOptions);
+
+  // Set at build time, e.g. for a project page on GitHub Pages:
+  //   jaspr build --dart-define=SITE_BASE=/portfolio/
+  const siteBase = String.fromEnvironment('SITE_BASE', defaultValue: '/');
 
   // Starts the app.
-  //
-  // [Document] renders the root document structure (<html>, <head> and <body>)
-  // with the provided parameters and components.
-  runApp(Document(
-    title: 'portfolio',
-    styles: [
-      // Special import rule to include to another css file.
-      css.import('https://fonts.googleapis.com/css?family=Roboto'),
-      // Each style rule takes a valid css selector and a set of styles.
-      // Styles are defined using type-safe css bindings and can be freely chained and nested.
-      css('html, body').styles(
-        width: 100.percent,
-        minHeight: 100.vh,
-        padding: .zero,
-        margin: .zero,
-        fontFamily: const .list([FontFamily('Roboto'), FontFamilies.sansSerif]),
-      ),
-      css('h1').styles(
-        margin: .unset,
-        fontSize: 4.rem,
-      ),
-    ],
-    head: [
-      // The generated flutter manifest and bootstrap script.
-      link(rel: 'manifest', href: 'manifest.json'),
-      script(src: "flutter_bootstrap.js", async: true),
-    ],
-    body: App(),
-  ));
+  runApp(
+    Document(
+      title: 'Lakshan Edirisinghe — Mobile Application Engineer',
+      lang: 'en',
+      base: siteBase,
+      viewport: 'width=device-width, initial-scale=1',
+      meta: {
+        'description':
+            'Mobile application engineer building reliable Android and Flutter products with Java, Kotlin, Dart and Supabase. Software engineering undergraduate at the Open University of Sri Lanka.',
+        'theme-color': '#eef1f7',
+      },
+      head: [
+        link(rel: 'preconnect', href: 'https://fonts.googleapis.com'),
+        link(
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com',
+          attributes: {'crossorigin': ''},
+        ),
+        link(
+          rel: 'stylesheet',
+          href:
+              'https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap',
+        ),
+        link(rel: 'stylesheet', href: 'styles/main.css'),
+        link(rel: 'icon', href: 'images/favicon.svg', type: 'image/svg+xml'),
+        link(rel: 'alternate icon', href: 'favicon.ico'),
+        script(src: 'js/phone-app.js', defer: true),
+      ],
+      body: const App(),
+    ),
+  );
 }
