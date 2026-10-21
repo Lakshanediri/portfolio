@@ -11,19 +11,19 @@
   align-items: center;
   gap: 8px;
   padding: 0.5rem 0.85rem;
-  border: 1px solid var(--deep-line);
+  border: 1px solid var(--band-chip-line);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--band-chip-bg);
   font-family: var(--font-mono);
   font-size: 0.6rem;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: rgba(233, 242, 249, 0.6);
+  color: var(--band-muted);
   white-space: nowrap;
 }
 
 .xp-meta-badge .i {
-  color: var(--mint-bright);
+  color: var(--band-accent);
   font-size: 0.72rem;
 }
 
@@ -41,7 +41,7 @@
   bottom: 12px;
   left: 7px;
   width: 1px;
-  background: linear-gradient(180deg, rgba(53, 230, 196, 0.4), rgba(255, 255, 255, 0.06));
+  background: linear-gradient(180deg, var(--band-chip-line), var(--band-line));
 }
 
 .xp {
@@ -170,9 +170,9 @@
   gap: 0;
   margin-top: 22px;
   padding: 20px 0;
-  border: 1px solid var(--deep-line);
+  border: 1px solid var(--band-line);
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--band-tint);
 }
 
 .kpi {
@@ -180,7 +180,7 @@
 }
 
 .kpi + .kpi {
-  border-left: 1px dashed rgba(255, 255, 255, 0.1);
+  border-left: 1px dashed var(--band-line);
 }
 
 .kpi b {
@@ -189,12 +189,12 @@
   font-weight: 600;
   letter-spacing: -0.045em;
   line-height: 1;
-  color: #f4fafd;
+  color: var(--band-ink);
 }
 
 .kpi b em {
   font-style: normal;
-  color: var(--mint-bright);
+  color: var(--band-accent);
 }
 
 .kpi span {
@@ -204,5 +204,5 @@
   font-size: 0.55rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(233, 242, 249, 0.42);
+  color: var(--band-faint);
 }

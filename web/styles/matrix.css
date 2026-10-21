@@ -24,6 +24,21 @@
   bottom: auto;
   height: 100vh;
   margin-bottom: -100vh;
+  opacity: 0.34;
+}
+
+.matrix--band .matrix-col {
+  --mx-rgb: 9, 122, 66;
+  --mx-head-rgb: 4, 82, 44;
+}
+
+body:has(#theme-toggle:checked) .matrix--band {
+  opacity: 0.82;
+}
+
+body:has(#theme-toggle:checked) .matrix--band .matrix-col {
+  --mx-rgb: 57, 255, 20;
+  --mx-head-rgb: 214, 255, 226;
 }
 
 .matrix-col {
@@ -95,11 +110,29 @@ body:has(#theme-toggle:checked) .matrix--hero .matrix-col {
 /* ----------------------------- footer ----------------------------- */
 
 .matrix--footer {
+  opacity: 0.3;
+}
+
+.matrix--footer .matrix-col {
+  --mx-rgb: 9, 122, 66;
+  --mx-head-rgb: 4, 82, 44;
+}
+
+body:has(#theme-toggle:checked) .matrix--footer {
   opacity: 0.42;
+}
+
+body:has(#theme-toggle:checked) .matrix--footer .matrix-col {
+  --mx-rgb: 57, 255, 20;
+  --mx-head-rgb: 214, 255, 226;
 }
 
 @media (max-width: 720px) {
   .matrix--band {
+    opacity: 0.26;
+  }
+
+  body:has(#theme-toggle:checked) .matrix--band {
     opacity: 0.62;
   }
 

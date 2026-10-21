@@ -107,6 +107,9 @@ Netlify Forms, …) if you need submissions without email.
   and a cool paper background (`#eef1f7`).
 - **Theme switch** — implemented in pure CSS with a hidden checkbox and
   `body:has(#theme-toggle:checked)`, so it works without JavaScript.
+- **Theme-aware bands** — the projects/experience/contact band and the footer
+  are deep navy in dark mode and switch to the paper tone in light mode; the
+  app cards keep their dark surfaces in both themes.
 - **Icons** — CSS masks (`web/styles/base.css`, `--i-*` variables), so every
   icon inherits `currentColor` and adds no requests.
 - **Motion** — hero entrance and scroll reveals use CSS animations with

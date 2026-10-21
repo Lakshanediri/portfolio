@@ -29,8 +29,37 @@ body:has(#theme-toggle:checked) {
   --shadow-lg: 0 60px 120px -60px rgba(0, 0, 0, 0.9);
 }
 
+body:has(#theme-toggle:checked) .dark-zone {
+  --band-bg: var(--deep);
+  --band-ink: #f4fafd;
+  --band-muted: var(--deep-muted);
+  --band-faint: rgba(233, 242, 249, 0.4);
+  --band-line: var(--deep-line);
+  --band-tint: rgba(255, 255, 255, 0.03);
+  --band-accent: var(--mint-bright);
+  --band-chip-bg: rgba(53, 230, 196, 0.07);
+  --band-chip-line: rgba(53, 230, 196, 0.24);
+  --band-grid: rgba(255, 255, 255, 0.028);
+  --band-glow: rgba(53, 230, 196, 0.11);
+}
+
 body:has(#theme-toggle:checked) .site-header {
   background: color-mix(in srgb, var(--page) 82%, transparent);
+}
+
+body:has(#theme-toggle:checked) .site-footer {
+  --foot-bg: #05101a;
+  --foot-ink: #f4fafd;
+  --foot-strong: rgba(233, 242, 249, 0.72);
+  --foot-muted: rgba(233, 242, 249, 0.5);
+  --foot-faint: rgba(233, 242, 249, 0.4);
+  --foot-line: rgba(255, 255, 255, 0.07);
+  --foot-line-strong: rgba(255, 255, 255, 0.1);
+  --foot-accent: var(--mint-bright);
+  --foot-chip-bg: rgba(53, 230, 196, 0.07);
+  --foot-chip-line: rgba(53, 230, 196, 0.26);
+  --foot-brand: linear-gradient(150deg, #123044, #071521);
+  --foot-brand-ink: #eaf3fa;
 }
 
 body:has(#theme-toggle:checked) .nav-shell {
