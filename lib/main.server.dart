@@ -47,8 +47,13 @@ void main() {
               'https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap',
         ),
         link(rel: 'stylesheet', href: 'styles/main.css'),
-        link(rel: 'icon', href: 'images/favicon.svg', type: 'image/svg+xml'),
-        link(rel: 'alternate icon', href: 'favicon.ico'),
+        link(rel: 'icon', href: 'images/favicon-le.svg', type: 'image/svg+xml'),
+        link(
+          rel: 'icon',
+          href: 'images/favicon-le.ico',
+          type: 'image/x-icon',
+          attributes: {'sizes': '16x16 24x24 32x32 48x48 64x64'},
+        ),
         link(
           rel: 'apple-touch-icon',
           href: 'images/apple-touch-icon.png',
