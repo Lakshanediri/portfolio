@@ -7,6 +7,8 @@ no client-side JavaScript. The phone in the hero is a small interactive app,
 progressively enhanced by `web/js/phone-app.js` (without it the feed still
 scrolls and the page reads fine).
 
+**Live:** <https://lakshanediri.github.io/portfolio/>
+
 ## Running
 
 Requires the Dart SDK 3.10+ (or the Flutter SDK, which bundles it) and the
@@ -32,6 +34,20 @@ jaspr build
 
 The static site is written to `build/jaspr/`. Deploy that folder to any static
 host (Netlify, Vercel, GitHub Pages, Cloudflare Pages, …).
+
+### GitHub Pages
+
+The site is published to a project page, so the build must know its path:
+
+```bash
+jaspr build --dart-define=SITE_BASE=/portfolio/
+```
+
+`.github/workflows/deploy.yml` does exactly that on every push to `main` and
+deploys `build/jaspr/` with `actions/deploy-pages`. `SITE_BASE` only changes the
+`<base href>` in the pre-rendered HTML (it defaults to `/` for local builds and
+root-domain hosts); every asset is referenced relatively, so no other path
+needs rewriting.
 
 ## Project structure
 
