@@ -18,11 +18,16 @@ void main() {
   // Initializes the server environment with the generated default options.
   Jaspr.initializeApp(options: defaultServerOptions);
 
+  // Set at build time, e.g. for a project page on GitHub Pages:
+  //   jaspr build --dart-define=SITE_BASE=/portfolio/
+  const siteBase = String.fromEnvironment('SITE_BASE', defaultValue: '/');
+
   // Starts the app.
   runApp(
     Document(
       title: 'Lakshan Edirisinghe — Mobile Application Engineer',
       lang: 'en',
+      base: siteBase,
       viewport: 'width=device-width, initial-scale=1',
       meta: {
         'description':
