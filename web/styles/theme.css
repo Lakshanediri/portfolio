@@ -1,0 +1,106 @@
+/* =============================================================
+   theme.css — pure-CSS dark mode (checkbox driven)
+   ============================================================= */
+
+body:has(#theme-toggle:checked) {
+  color-scheme: dark;
+
+  --page: #061320;
+  --page-2: #08192a;
+  --surface: #0b1e2e;
+  --surface-2: #0e2436;
+  --surface-3: #133048;
+
+  --ink: #eaf3fa;
+  --ink-2: #cfe2ef;
+  --muted: #93a9bb;
+  --muted-2: #7c93a6;
+
+  --line: rgba(255, 255, 255, 0.1);
+  --line-strong: rgba(255, 255, 255, 0.18);
+
+  --mint: #35e6c4;
+  --mint-deep: #4fe9cd;
+  --mint-bright: #5cf0d4;
+  --cyan: #5cc4f0;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 24px -16px rgba(0, 0, 0, 0.7);
+  --shadow-md: 0 30px 60px -34px rgba(0, 0, 0, 0.85);
+  --shadow-lg: 0 60px 120px -60px rgba(0, 0, 0, 0.9);
+}
+
+body:has(#theme-toggle:checked) .site-header {
+  background: color-mix(in srgb, var(--page) 82%, transparent);
+}
+
+body:has(#theme-toggle:checked) .nav-shell {
+  background: color-mix(in srgb, var(--surface) 74%, transparent);
+}
+
+body:has(#theme-toggle:checked) .brand-mark {
+  background: linear-gradient(150deg, #123044, #071521);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+body:has(#theme-toggle:checked) .brand-mark::after {
+  border-color: var(--surface);
+}
+
+body:has(#theme-toggle:checked) .theme-toggle .knob {
+  transform: translateX(24px);
+  background: #e9f5fb;
+}
+
+body:has(#theme-toggle:checked) .hero-bg .glow-a {
+  background: radial-gradient(circle, rgba(53, 230, 196, 0.16), transparent 65%);
+}
+
+body:has(#theme-toggle:checked) .hero-bg .glow-b {
+  background: radial-gradient(circle, rgba(61, 140, 240, 0.14), transparent 68%);
+}
+
+body:has(#theme-toggle:checked) .hero-stats {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+body:has(#theme-toggle:checked) .stat + .stat {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+body:has(#theme-toggle:checked) .btn-ghost {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #eaf3fa;
+}
+
+body:has(#theme-toggle:checked) .btn-ghost:hover {
+  border-color: rgba(53, 230, 196, 0.5);
+  color: var(--mint-bright);
+}
+
+body:has(#theme-toggle:checked) .chip,
+body:has(#theme-toggle:checked) .theme-toggle {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+body:has(#theme-toggle:checked) .tool-strip {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+body:has(#theme-toggle:checked) .stack-card {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body:has(#theme-toggle:checked) ::-webkit-scrollbar-track {
+  background: #071522;
+}
+
+body:has(#theme-toggle:checked) ::-webkit-scrollbar-thumb {
+  background: #1d3a4f;
+  border-color: #071522;
+}
+
+body:has(#theme-toggle:checked) ::selection {
+  background: rgba(53, 230, 196, 0.28);
+  color: #fff;
+}

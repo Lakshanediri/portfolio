@@ -6,8 +6,6 @@
 
 import 'package:jaspr/client.dart';
 
-import 'package:portfolio/pages/about.dart' deferred as _about;
-
 /// Default [ClientOptions] for use with your Jaspr project.
 ///
 /// Use this to initialize Jaspr **before** calling [runApp].
@@ -24,8 +22,4 @@ import 'package:portfolio/pages/about.dart' deferred as _about;
 ///   runApp(...);
 /// }
 /// ```
-ClientOptions get defaultClientOptions => ClientOptions(
-  clients: {
-    'about': ClientLoader((p) => _about.About(), loader: _about.loadLibrary),
-  },
-);
+ClientOptions get defaultClientOptions => ClientOptions();

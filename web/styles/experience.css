@@ -1,0 +1,208 @@
+/* =============================================================
+   experience.css — section 03, leadership timeline
+   ============================================================= */
+
+.experience {
+  padding-top: 92px;
+}
+
+.xp-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--deep-line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: rgba(233, 242, 249, 0.6);
+  white-space: nowrap;
+}
+
+.xp-meta-badge .i {
+  color: var(--mint-bright);
+  font-size: 0.72rem;
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 7px;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(53, 230, 196, 0.4), rgba(255, 255, 255, 0.06));
+}
+
+.xp {
+  position: relative;
+  display: grid;
+  grid-template-columns: 34px 268px minmax(0, 1fr);
+  gap: 20px;
+  padding: 24px 24px 22px 4px;
+  border: 1px solid var(--deep-line);
+  border-radius: 22px;
+  background: linear-gradient(172deg, rgba(14, 36, 54, 0.86), rgba(8, 21, 33, 0.92));
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.xp:hover {
+  border-color: rgba(53, 230, 196, 0.26);
+  transform: translateY(-3px);
+}
+
+.xp-dot {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 15px;
+  height: 15px;
+  margin: 6px auto 0;
+  border: 1px solid rgba(53, 230, 196, 0.5);
+  border-radius: 50%;
+  background: #081522;
+}
+
+.xp-dot::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--mint-bright);
+  box-shadow: 0 0 10px rgba(53, 230, 196, 0.8);
+}
+
+.xp-period {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  border: 1px solid rgba(53, 230, 196, 0.22);
+  border-radius: 6px;
+  background: rgba(53, 230, 196, 0.07);
+  font-family: var(--font-mono);
+  font-size: 0.54rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--mint-bright);
+}
+
+.xp h3 {
+  margin-top: 10px;
+  font-size: 1.06rem;
+  font-weight: 600;
+  letter-spacing: -0.028em;
+  line-height: 1.3;
+}
+
+.xp-company {
+  margin-top: 5px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(233, 242, 249, 0.72);
+}
+
+.xp-place {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 7px;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(233, 242, 249, 0.42);
+}
+
+.xp-body ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.xp-body li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.84rem;
+  line-height: 1.68;
+  color: rgba(233, 242, 249, 0.66);
+}
+
+.xp-body li::before {
+  content: "";
+  position: absolute;
+  top: 0.62em;
+  left: 2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 1px;
+  background: var(--mint);
+  rotate: 45deg;
+}
+
+.xp-body li strong {
+  font-weight: 600;
+  color: rgba(244, 250, 253, 0.95);
+}
+
+.xp-body .tag-row {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.09);
+}
+
+/* KPI strip */
+
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 22px;
+  padding: 20px 0;
+  border: 1px solid var(--deep-line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.kpi {
+  padding: 0 22px;
+}
+
+.kpi + .kpi {
+  border-left: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.kpi b {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  color: #f4fafd;
+}
+
+.kpi b em {
+  font-style: normal;
+  color: var(--mint-bright);
+}
+
+.kpi span {
+  display: block;
+  margin-top: 7px;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(233, 242, 249, 0.42);
+}
