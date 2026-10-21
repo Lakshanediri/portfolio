@@ -49,6 +49,11 @@ void main() {
         link(rel: 'stylesheet', href: 'styles/main.css'),
         link(rel: 'icon', href: 'images/favicon.svg', type: 'image/svg+xml'),
         link(rel: 'alternate icon', href: 'favicon.ico'),
+        link(
+          rel: 'apple-touch-icon',
+          href: 'images/apple-touch-icon.png',
+          attributes: {'sizes': '180x180'},
+        ),
         script(src: 'js/phone-app.js', defer: true),
       ],
       body: const App(),
