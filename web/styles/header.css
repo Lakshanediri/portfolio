@@ -102,13 +102,6 @@
   color: var(--ink);
 }
 
-.nav-links .num {
-  font-family: var(--font-mono);
-  font-size: 0.56rem;
-  color: var(--mint-deep);
-  opacity: 0.8;
-}
-
 .nav-actions {
   display: flex;
   align-items: center;

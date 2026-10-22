@@ -5,11 +5,11 @@ class Header extends StatelessComponent {
   const Header({super.key});
 
   static const _links = [
-    (number: '01', label: 'About', href: '#about'),
-    (number: '02', label: 'Skills', href: '#skills'),
-    (number: '03', label: 'Projects', href: '#projects'),
-    (number: '04', label: 'Experience', href: '#experience'),
-    (number: '05', label: 'Contact', href: '#contact'),
+    (label: 'About', href: '#about'),
+    (label: 'Skills', href: '#skills'),
+    (label: 'Projects', href: '#projects'),
+    (label: 'Experience', href: '#experience'),
+    (label: 'Contact', href: '#contact'),
   ];
 
   @override
@@ -26,10 +26,7 @@ class Header extends StatelessComponent {
           ]),
           nav(classes: 'nav-links', attributes: {'aria-label': 'Primary'}, [
             for (final link in _links)
-              a(href: link.href, [
-                span(classes: 'num', [.text(link.number)]),
-                .text(link.label),
-              ]),
+              a(href: link.href, [.text(link.label)]),
           ]),
           div(classes: 'nav-actions', [
             input(
