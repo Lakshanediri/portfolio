@@ -74,10 +74,6 @@
   color: var(--band-muted);
 }
 
-.dark-zone .eyebrow .idx {
-  color: var(--band-accent);
-}
-
 .dark-zone .section-note {
   color: var(--band-faint);
 }

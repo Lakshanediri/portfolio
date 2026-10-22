@@ -10,10 +10,7 @@ class ExperienceSection extends StatelessComponent {
       div(classes: 'wrap', [
         div(classes: 'section-head', [
           div([
-            p(classes: 'eyebrow', [
-              span(classes: 'idx', [.text('03')]),
-              .text(' / Education & hands-on work'),
-            ]),
+            p(classes: 'eyebrow', [.text('Education & hands-on work')]),
             h2([
               .text('Education & '),
               em([.text('project')]),

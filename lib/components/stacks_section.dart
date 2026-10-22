@@ -65,10 +65,7 @@ class StacksSection extends StatelessComponent {
       div(classes: 'wrap', [
         div(classes: 'section-head', [
           div([
-            p(classes: 'eyebrow', [
-              span(classes: 'idx', [.text('01')]),
-              .text(' / Architecture & capabilities'),
-            ]),
+            p(classes: 'eyebrow', [.text('Architecture & capabilities')]),
             h2([
               .text('Interactive '),
               em([.text('engineering')]),

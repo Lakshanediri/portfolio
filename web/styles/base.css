@@ -205,10 +205,6 @@ button {
   opacity: 0.45;
 }
 
-.eyebrow .idx {
-  color: var(--mint-deep);
-}
-
 .section-head {
   display: flex;
   align-items: flex-end;

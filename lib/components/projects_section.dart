@@ -12,10 +12,7 @@ class ProjectsSection extends StatelessComponent {
       div(classes: 'wrap', [
         div(classes: 'section-head', [
           div([
-            p(classes: 'eyebrow', [
-              span(classes: 'idx', [.text('02')]),
-              .text(' / Selected projects'),
-            ]),
+            p(classes: 'eyebrow', [.text('Selected projects')]),
             h2([
               .text('Featured '),
               em([.text('mobile')]),

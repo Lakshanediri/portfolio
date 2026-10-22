@@ -14,10 +14,7 @@ class ContactSection extends StatelessComponent {
       div(classes: 'wrap', [
         div(classes: 'section-head', [
           div([
-            p(classes: 'eyebrow', [
-              span(classes: 'idx', [.text('04')]),
-              .text(' / Get in touch'),
-            ]),
+            p(classes: 'eyebrow', [.text('Get in touch')]),
             h2([
               .text("Let's connect & "),
               em([.text('collaborate')]),
