@@ -60,6 +60,7 @@ void main() {
           attributes: {'sizes': '180x180'},
         ),
         script(src: 'js/phone-app.js', defer: true),
+        script(src: 'js/contact-form.js', defer: true),
       ],
       body: const App(),
     ),

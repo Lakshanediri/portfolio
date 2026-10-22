@@ -109,60 +109,79 @@ class ContactSection extends StatelessComponent {
   }
 
   static Component _form() {
-    return div(classes: 'contact-card', [
-      div(classes: 'form-head', [
-        span([.text('Project brief')]),
-        span(classes: 'mono', [.text('01 — 04')]),
-      ]),
-      div(classes: 'form-grid', [
-        _field(
-          label: 'Your name',
-          name: 'name',
-          placeholder: 'e.g. Alex Chen',
+    return form(
+      classes: 'contact-card',
+      action: 'https://formsubmit.co/ajax/$_email',
+      method: FormMethod.post,
+      attributes: {'data-email': _email},
+      [
+        input(type: InputType.hidden, name: '_subject', value: 'Portfolio inquiry'),
+        input(type: InputType.hidden, name: '_template', value: 'table'),
+        input(type: InputType.hidden, name: '_captcha', value: 'false'),
+        input(
+          type: InputType.text,
+          name: '_honey',
+          classes: 'hp-field',
+          attributes: {'tabindex': '-1', 'autocomplete': 'off', 'aria-hidden': 'true'},
         ),
-        _field(
-          label: 'Your email',
-          name: 'email',
-          placeholder: 'alex@example.com',
-          type: InputType.email,
-        ),
-        _field(
-          label: 'Project type',
-          name: 'project',
-          placeholder: 'App idea · internship · full-time role',
-          full: true,
-        ),
-        div(classes: 'field full', [
-          span([.text('Message')]),
-          textarea(
-            name: 'message',
-            rows: 4,
-            placeholder: "Hi Lakshan, I'd like to talk about …",
-            attributes: {'aria-label': 'Message'},
-            const [],
+        div(classes: 'form-head', [
+          span([.text('Project brief')]),
+          span(classes: 'mono', [.text('01 — 04')]),
+        ]),
+        div(classes: 'form-grid', [
+          _field(
+            label: 'Your name',
+            name: 'name',
+            placeholder: 'e.g. Alex Chen',
+            required: true,
           ),
+          _field(
+            label: 'Your email',
+            name: 'email',
+            placeholder: 'alex@example.com',
+            type: InputType.email,
+            required: true,
+          ),
+          _field(
+            label: 'Project type',
+            name: 'project',
+            placeholder: 'App idea · internship · full-time role',
+            full: true,
+          ),
+          div(classes: 'field full', [
+            span([.text('Message')]),
+            textarea(
+              name: 'message',
+              rows: 4,
+              placeholder: "Hi Lakshan, I'd like to talk about …",
+              attributes: {'aria-label': 'Message', 'required': 'true'},
+              const [],
+            ),
+          ]),
         ]),
-      ]),
-      div(classes: 'form-foot', [
-        span(classes: 'note', [
-          span(classes: 'i i-check', []),
-          .text('Opens your mail app — no data stored'),
-        ]),
-        a(
-          href: 'mailto:$_email?subject=Project%20inquiry',
-          classes: 'btn btn-send',
-          [
+        div(classes: 'form-foot', [
+          span(
+            classes: 'note',
+            attributes: {'role': 'status', 'aria-live': 'polite'},
+            [
+              span(classes: 'i i-check', []),
+              span(classes: 'note-text', [
+                .text('Sends straight to my inbox — no data stored'),
+              ]),
+            ],
+          ),
+          button(type: ButtonType.submit, classes: 'btn btn-send', [
             .text('Send message'),
             span(classes: 'i i-send', []),
-          ],
-        ),
-      ]),
-      div(classes: 'form-extra', [
-        div([b([.text('24h')]), span([.text('Typical reply')])]),
-        div([b([.text('CV')]), span([.text('On request')])]),
-        div([b([.text('Remote')]), span([.text('Worldwide')])]),
-      ]),
-    ]);
+          ]),
+        ]),
+        div(classes: 'form-extra', [
+          div([b([.text('24h')]), span([.text('Typical reply')])]),
+          div([b([.text('CV')]), span([.text('On request')])]),
+          div([b([.text('Remote')]), span([.text('Worldwide')])]),
+        ]),
+      ],
+    );
   }
 
   static Component _field({
@@ -171,13 +190,18 @@ class ContactSection extends StatelessComponent {
     required String placeholder,
     InputType type = InputType.text,
     bool full = false,
+    bool required = false,
   }) {
     return div(classes: full ? 'field full' : 'field', [
       span([.text(label)]),
       input(
         type: type,
         name: name,
-        attributes: {'placeholder': placeholder, 'aria-label': label},
+        attributes: {
+          'placeholder': placeholder,
+          'aria-label': label,
+          if (required) 'required': 'true',
+        },
       ),
     ]);
   }

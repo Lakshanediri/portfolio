@@ -249,6 +249,37 @@
   font-size: 0.7rem;
 }
 
+.form-foot .note.is-sent {
+  color: #7ef0d8;
+}
+
+.form-foot .note.is-error {
+  color: #ffb4a8;
+}
+
+.form-foot .note.is-error .i {
+  color: #ffb4a8;
+}
+
+.form-foot .note.is-sending .i {
+  color: rgba(233, 242, 249, 0.55);
+}
+
+.form-foot .note a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
 .btn-send {
   background: linear-gradient(112deg, #35e6c4, #2aa7dd);
   color: #04241f;
@@ -258,6 +289,12 @@
 .btn-send:hover {
   transform: translateY(-2px);
   box-shadow: 0 24px 40px -20px rgba(53, 230, 196, 1);
+}
+
+.btn-send:disabled {
+  opacity: 0.65;
+  cursor: progress;
+  transform: none;
 }
 
 /* small reassurance row under the form */
